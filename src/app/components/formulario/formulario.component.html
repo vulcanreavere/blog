@@ -1,17 +1,25 @@
+<div class="contenedor">
 <div class="form-container">
   <form>
     <label for="title">Titulo:</label>
-    <input id="title" name="title" />
+    <input id="title" name="title" [(ngModel)]="newNotice.title" />
 
     <label for="imageUrl">Imagen URL:</label>
-    <input id="imageUrl" name="imageUrl" />
+    <input id="imageUrl" name="imageUrl" [(ngModel)]="newNotice.imageUrl"/>
 
     <label for="body">Cuerpo:</label>
-    <textarea id="body" name="body" placeholder="Escribe tu noticia..."></textarea>
+    <textarea id="body" name="body" placeholder="Escribe tu noticia..." [(ngModel)]="newNotice.body"></textarea>
 
     <label for="date">Fecha:</label>
-    <input id="date" type="date" name="date" />
+    <input id="date" type="date" name="date"  [(ngModel)]="newNotice.date"/>
 
-    <button type="submit">Enviar</button>
+    <button (click)="enviarNoticia()" type="submit">Enviar</button>
   </form>
+</div>
+  <div>
+    
+  </div>
+  <div class="news-container"[innerHTML]="cargarNoticias()">
+    
+  </div>
 </div>
